@@ -15,4 +15,9 @@ class Room
       @occupied.push(guest)
   end
 
+  def remove_guest_from_room(guest)
+    index = @occupied.index(guest)
+    @occupied.slice!(index, 1)
+  end
+
 end
