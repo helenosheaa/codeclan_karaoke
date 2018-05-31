@@ -11,4 +11,10 @@ class Guest
     return wallet >= entry.price()
   end
 
+  def pay_entrance(entry)
+    if can_afford_entrance?(entry)
+      @wallet -= entry.price()
+    end
+  end
+
 end

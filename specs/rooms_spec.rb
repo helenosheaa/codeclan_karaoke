@@ -6,10 +6,10 @@ require_relative("../songs")
 class RoomTest < MiniTest::Test
 
   def setup
-    @room1 = Room.new("80s", [], [], 15, [])
-    @room2 = Room.new("70s", [], [], 15, [])
-    @room3 = Room.new("60s", [], [], 15, [])
-    @room4 = Room.new("00s", [], [], 15, [])
+    @room1 = Room.new("80s", [], [], 15, 0)
+    @room2 = Room.new("70s", [], [], 15, 0)
+    @room3 = Room.new("60s", [], [], 15, 0)
+    @room4 = Room.new("00s", [], [], 15, 0)
     @guest1 = Guest.new("Helen", 20)
     @guest2 = Guest.new("Nick", 55)
     @guest3 = Guest.new("Cat", 33)
@@ -53,10 +53,8 @@ class RoomTest < MiniTest::Test
     assert_equal(15, @room2.price())
   end
 
-  def test_room_till_empty
-    def test_room_till_empty()
-    assert_equal(0, @room2.room_till_empty())
-    end
+  def test_till_empty
+    assert_equal(0, @room2.till_empty())
   end
 
   def test_num_guests_in_room
@@ -65,36 +63,10 @@ class RoomTest < MiniTest::Test
     assert_equal(2, @room1.occupied.count())
   end
 
-  # def test_collect_entrance_fee
-  #   @room4.till.collect_entrance_fee(@room4.price)
-  #   assert_equal(15, @room4.till())
-  # end
+  def test_collect_entrance_fee
+    @room4.till.collect_entrance_fee(@room4.price)
+    assert_equal(15, @room4.till())
+    assert_equal(45, @guest2.wallet())
+  end
 
 end
-
-# def test_customer_can_buy_drink__decreases_money
-#     @customer.buy_drink(@drink)
-#     assert_equal(8.0, @customer.wallet())
-#   end
-
-#   def buy_drink(drink)
-#     if sufficient_funds?(drink)
-#       @wallet -= drink.price()
-#       @drunkenness += drink.alcohol_level()
-#     end
-#   end
-#
-#   def sufficient_funds?(item)
-#     return wallet >= item.price()
-#   end
-#
-#   def serve(customer, drink)
-#   return if customer_too_young?(customer)
-#   return if customer_too_drunk?(customer)
-#   return if !@drinks.include?(drink)
-#   return if check_stock(drink) == 0
-#
-#   customer.buy_drink(drink)
-#   @till += drink.price()
-#   @drinks[drink] -= 1
-# end

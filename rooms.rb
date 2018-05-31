@@ -1,13 +1,13 @@
 class Room
 
-  attr_reader :name, :occupied, :songs, :till, :price
+  attr_reader :name, :occupied, :songs, :price, :till
 
-  def initialize(name, occupied, songs, till, price)
+  def initialize(name, occupied, songs, price, till)
     @name = name
     @occupied = []
     @songs = []
     @price = 15
-    @till = []
+    @till = 0
   end
 
   def add_guest_to_room(guest)
@@ -24,7 +24,7 @@ class Room
   end
 
   def till_empty()
-    return @till.length()
+    return @till.count()
   end
 
   def num_guests_in_room
@@ -32,11 +32,12 @@ class Room
   end
 
   def room_has_price
-    return @room1.price
+    return room.price
   end
 
-  # def collect_entrance_fee
-  #   @till += @price
-  # end
+  def collect_entrance_fee(guest, entry)
+    guests.pay_entrance(entry)
+    @till += room.price()
+  end
 
 end
