@@ -27,6 +27,14 @@ class Room
     return @till.length()
   end
 
+  def num_guests_in_room
+    return @occupied.length()
+  end
+
+  def room_has_price
+    return @room1.price
+  end
+
   # def collect_entrance_fee
   #   @till += @price
   # end
