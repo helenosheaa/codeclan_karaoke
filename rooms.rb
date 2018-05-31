@@ -1,11 +1,13 @@
 class Room
 
-  attr_reader :name, :occupied, :songs
+  attr_reader :name, :occupied, :songs, :till, :price
 
-  def initialize(name, occupied, songs)
+  def initialize(name, occupied, songs, till, price)
     @name = name
     @occupied = []
     @songs = []
+    @price = 15
+    @till = []
   end
 
   def occupied_length()
@@ -28,5 +30,13 @@ class Room
   def add_song_to_room(song)
       @songs.push(song)
   end
+
+  # def till_empty()
+  #   return @till.length()
+  # end
+  #
+  # def collect_entrance_fee
+  #   @till.push(@price)
+  # end
 
 end
