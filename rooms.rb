@@ -31,12 +31,12 @@ class Room
       @songs.push(song)
   end
 
-  # def till_empty()
-  #   return @till.length()
-  # end
-  #
-  # def collect_entrance_fee
-  #   @till.push(@price)
-  # end
+  def till_empty()
+    return @till.length()
+  end
+
+  def collect_entrance_fee
+    @till += @price
+  end
 
 end

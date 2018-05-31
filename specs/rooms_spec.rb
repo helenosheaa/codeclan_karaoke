@@ -52,15 +52,43 @@ class RoomTest < MiniTest::Test
   def test_room_has_price
     assert_equal(15, @room2.price())
   end
-  # def test_room_till_empty
-  #   # def test_room_till_empty()
-  #   # assert_equal(0, @room2.room_till_empty())
-  #   # end
-  # end()
 
-  # def test_collect_entrance_fee
-  #   @room4.collect_entrance_fee(@guest2.wallet)
-  #   assert_equal(15, @room4.till.length())
-  # end
+  def test_room_till_empty
+    def test_room_till_empty()
+    assert_equal(0, @room2.room_till_empty())
+    end
+  end
+
+  def test_collect_entrance_fee
+    @room4.till.collect_entrance_fee(@room4.price)
+    assert_equal(15, @room4.till())
+  end
 
 end
+
+# def test_customer_can_buy_drink__decreases_money
+#     @customer.buy_drink(@drink)
+#     assert_equal(8.0, @customer.wallet())
+#   end
+
+#   def buy_drink(drink)
+#     if sufficient_funds?(drink)
+#       @wallet -= drink.price()
+#       @drunkenness += drink.alcohol_level()
+#     end
+#   end
+#
+#   def sufficient_funds?(item)
+#     return wallet >= item.price()
+#   end
+#
+#   def serve(customer, drink)
+#   return if customer_too_young?(customer)
+#   return if customer_too_drunk?(customer)
+#   return if !@drinks.include?(drink)
+#   return if check_stock(drink) == 0
+#
+#   customer.buy_drink(drink)
+#   @till += drink.price()
+#   @drinks[drink] -= 1
+# end
