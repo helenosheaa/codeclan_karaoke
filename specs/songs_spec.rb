@@ -5,6 +5,9 @@ class SongTest < MiniTest::Test
 
   def setup
     @song1 = Song.new("Hello", "Adele")
+    @song2 = Song.new("Why is it so hard?", "Charles Bradley")
+    @song3 = Song.new("Acceptable in the 80s", "Calvin Harris")
+    @song4 = Song.new("Blah", "Whiskey Town")
   end
 
   def test_song_has_title
