@@ -19,10 +19,10 @@ class Room
     @guest_count.slice!(index, 1)
   end
 
-  def add_song_to_room(song)
+  def add_song_to_room_playlist(song)
       @songs.push(song)
   end
-
+  
   def till_empty()
     return @till
   end

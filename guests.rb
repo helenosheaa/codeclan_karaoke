@@ -18,8 +18,10 @@ class Guest
     end
   end
 
-  def room_has_favorite_song
-    return "Woooo they have my favorite song #{favorite_song}!"
+  def room_has_guests_favorite_song
+      if @favorite_song == room.add_song_to_room_playlist
+        return "Woooo they have my favorite song #{favorite_song}!"
+      end
   end
 
 end

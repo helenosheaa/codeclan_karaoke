@@ -44,8 +44,8 @@ class RoomTest < MiniTest::Test
   assert_equal(0, @room2.songs.count())
   end
 
-  def test_add_song_to_room
-    @room4.add_song_to_room(@song2)
+  def test_add_song_to_room_playlist
+    @room4.add_song_to_room_playlist(@song2)
     assert_equal(1, @room4.songs.count())
   end
 
@@ -91,4 +91,5 @@ class RoomTest < MiniTest::Test
     @room1.check_in_guest_to_room(@guest1)
     assert_equal(true, @room1.occupied?())
   end
+
 end
