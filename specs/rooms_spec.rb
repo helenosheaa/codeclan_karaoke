@@ -84,4 +84,12 @@ class RoomTest < MiniTest::Test
     assert_equal(true, @room1.occupied?())
   end
 
+  def test_if_occupied_refuse_entry
+    @room1.add_guest_to_room(@guest4)
+    @room1.add_guest_to_room(@guest3)
+    @room1.add_guest_to_room(@guest2)
+    @room1.add_guest_to_room(@guest1)
+    @room1.add_guest_to_room(@guest1)
+    assert_equal(true, @room1.occupied?())
+  end
 end

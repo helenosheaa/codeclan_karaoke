@@ -48,5 +48,8 @@ class Room
   @guest_count.length >= 4
   end
 
+  def occupied_refused_entry
+    @guest_count << guest if !occupied?
+  end
 
 end
