@@ -42,3 +42,7 @@ class GuestTest < MiniTest::Test
   end
 
 end
+
+# def test_drive
+#   assert_equal("Brum brum",@bus.drive())
+# end

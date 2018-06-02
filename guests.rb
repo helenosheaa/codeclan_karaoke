@@ -18,12 +18,18 @@ class Guest
     end
   end
 
+  def room_has_favorite_song
+    return "Whoo they have my favorite song #{favorite_song}!"
+  end
+
 end
 
 # def say_favourite_language(language)
 #   return "I love #{language}"
 # end
 
-def room_has_favorite_song
-  return "Whoo they have my favorite song #{favorite_song}!"
-end
+
+
+# def drive
+#     return "Brum brum"
+#   end
