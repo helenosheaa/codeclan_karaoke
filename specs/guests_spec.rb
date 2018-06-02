@@ -38,11 +38,7 @@ class GuestTest < MiniTest::Test
 
   def test_room_has_favorite_song
     @room4.add_song_to_room(@song2)
-    assert_equal("Whoo they have my favorite song Coming Home!", @guest1.room_has_favorite_song())
+    assert_equal("Woooo they have my favorite song Coming Home!", @guest1.room_has_favorite_song())
   end
 
 end
-
-# def test_drive
-#   assert_equal("Brum brum",@bus.drive())
-# end
