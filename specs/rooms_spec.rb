@@ -25,19 +25,19 @@ class RoomTest < MiniTest::Test
   end
 
   def test_room_starts_empty()
-  assert_equal(0, @room2.occupied.count())
+  assert_equal(0, @room2.guest_count.count())
   end
 
   def test_add_guest_to_room
     @room2.add_guest_to_room(@guest2)
-    assert_equal(1, @room2.occupied.count())
+    assert_equal(1, @room2.guest_count.count())
   end
 
   def test_remove_guest_from_room
     @room3.add_guest_to_room(@guest3)
     @room3.add_guest_to_room(@guest2)
     @room3.remove_guest_from_room(@guest2)
-    assert_equal(1, @room3.occupied.count())
+    assert_equal(1, @room3.guest_count.count())
   end
 
   def test_room_has_no_songs()
@@ -60,13 +60,19 @@ class RoomTest < MiniTest::Test
   def test_num_guests_in_room
     @room1.add_guest_to_room(@guest4)
     @room1.add_guest_to_room(@guest1)
-    assert_equal(2, @room1.occupied.count())
+    assert_equal(2, @room1.guest_count.count())
   end
 
-  def test_collect_entrance_fee
-    @room4.till.collect_entrance_fee(@room4.price)
-    assert_equal(15, @room4.till())
-    assert_equal(45, @guest2.wallet())
+  def test_room_collects_entrance_fee
+    @room2.collect(@room2.price)
+    assert_equal(15, @room2.till())
+  end
+
+
+  def test_room_collects_entrance_fee_from_guest
+    @room2.collect(@guest3.wallet)
+    assert_equal(15, @room2.till())
+    assert_equal(18, @guest3.wallet())
   end
 
 end
