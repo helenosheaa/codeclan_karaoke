@@ -63,16 +63,16 @@ class RoomTest < MiniTest::Test
     assert_equal(2, @room1.guest_count.count())
   end
 
-  def test_room_collects_entrance_fee
-    @room2.collect(@room2.price)
+  def test_room_takes_entry
+    @room2.room_takes_entry(@room2)
     assert_equal(15, @room2.till())
   end
 
-
-  def test_room_collects_entrance_fee_from_guest
-    @room2.collect(@guest3.wallet)
-    assert_equal(15, @room2.till())
+  def test_room_takes_entry_from_guest
+    @room2.room_takes_entry(@room2)
+    @guest3.pay_entrance(@room2)
     assert_equal(18, @guest3.wallet())
+    assert_equal(15, @room2.till())
   end
 
 end

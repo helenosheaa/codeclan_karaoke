@@ -35,19 +35,13 @@ class Room
     return room.price
   end
 
-  def collect(price)
+  def room_takes_entry(price)
     @till += @price
   end
 
-  # def room_collects_entrance_fee(guest, entry)
-  #   guests.pay_entrance(entry)
-  #   @till += @price
-  # end
-
-  def room_collects_entrance_fee_from_guest(room, price)
-    if can_afford_entrance?
-      pay_entrance(entry)
-      @till.collect(price)
-    end
+  def room_takes_entry_from_guest(price, guest)
+    guest.pay_entrance(price)
+    @till += room.price()
   end
+
 end
