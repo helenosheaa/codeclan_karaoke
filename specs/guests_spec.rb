@@ -10,8 +10,8 @@ class GuestTest < MiniTest::Test
     @guest2 = Guest.new("Nick", 55, "Why is it so hard?")
     @guest3 = Guest.new("Cat", 33, "Acceptable in the 80s")
     @guest4 = Guest.new("Michael", 25, "Don't Wanna Know Why")
-    @room1 = Room.new("80s", [], [], 15, 0)
-    @room4 = Room.new("80s", [], [], 15, 0)
+    @room1 = Room.new("Funk", [], [], 15, 0)
+    @room4 = Room.new("Old School", [], [], 15, 0)
     @song1 = Song.new("Coming Home", "Leon Bridges")
   end
 

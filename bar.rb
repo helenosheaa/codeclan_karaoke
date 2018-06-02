@@ -1,8 +1,9 @@
 class Bar
 
-  attr_reader :till
+  attr_reader :name, :till
 
-  def initialize(till)
+  def initialize(name, till)
+    @name = name
     @till = till
   end
 
