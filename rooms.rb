@@ -10,11 +10,11 @@ class Room
     @till = 0
   end
 
-  def add_guest_to_room(guest)
+  def check_in_guest_to_room(guest)
       @guest_count.push(guest)
   end
 
-  def remove_guest_from_room(guest)
+  def check_out_guest_from_room(guest)
     index = @guest_count.index(guest)
     @guest_count.slice!(index, 1)
   end
