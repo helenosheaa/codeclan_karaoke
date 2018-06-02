@@ -44,4 +44,9 @@ class Room
     @till += room.price()
   end
 
+  def occupied?
+  @guest_count.length >= 4
+  end
+
+
 end
