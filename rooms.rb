@@ -24,7 +24,7 @@ class Room
   end
 
   def till_empty()
-    return @till.count()
+    return @till
   end
 
   def num_guests_in_room

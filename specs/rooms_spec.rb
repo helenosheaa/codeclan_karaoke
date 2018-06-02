@@ -10,14 +10,14 @@ class RoomTest < MiniTest::Test
     @room2 = Room.new("70s", [], [], 15, 0)
     @room3 = Room.new("60s", [], [], 15, 0)
     @room4 = Room.new("00s", [], [], 15, 0)
-    @guest1 = Guest.new("Helen", 20)
-    @guest2 = Guest.new("Nick", 55)
-    @guest3 = Guest.new("Cat", 33)
-    @guest4 = Guest.new("Michael", 25)
-    @song1 = Song.new("Hello", "Adele")
+    @guest1 = Guest.new("Helen", 20, "Coming Home")
+    @guest2 = Guest.new("Nick", 55, "Why is it so hard?")
+    @guest3 = Guest.new("Cat", 33, "Acceptable in the 80s")
+    @guest4 = Guest.new("Michael", 25, "Don't Wanna Know Why")
+    @song1 = Song.new("Coming Home", "Leon Bridges")
     @song2 = Song.new("Why is it so hard?", "Charles Bradley")
     @song3 = Song.new("Acceptable in the 80s", "Calvin Harris")
-    @song4 = Song.new("Blah", "Whiskey Town")
+    @song4 = Song.new("Don't Wanna Know Why", "Whiskeytown")
   end
 
   def test_room_has_name
@@ -54,7 +54,7 @@ class RoomTest < MiniTest::Test
   end
 
   def test_till_empty
-    assert_equal(0, @room2.till_empty())
+    assert_equal(0, @room2.till())
   end
 
   def test_num_guests_in_room
